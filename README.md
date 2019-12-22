@@ -1,4 +1,7 @@
 # OpenVPN
+
+SoftetherVPN搭建教程：https://blog.henryxzx.com/2018/09/17/%E9%80%9A%E8%BF%87UDP53%20%E5%AE%9E%E7%8E%B0%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%85%8D%E8%AE%A4%E8%AF%81%E4%B8%8A%E7%BD%91/
+
 SoftetherVPN下载地址
 
 Linux版服务器端：https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.28-9669-beta/softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz
