@@ -6,7 +6,7 @@ SoftetherVPN下载地址
 
 Linux版服务器端：https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.28-9669-beta/softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz
 
-Linux版服务器端（备用）：https://www.softether-download.com/files/softether/v4.28-9669-beta-2018.09.11-tree/Linux/SoftEther_VPN_Server/64bit_-_Intel_x64_or_AMD64/softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz
+Linux版服务器端（备用）：https://www.lanzous.com/i9mr96d
 
 Win版服务器端：https://www.lanzous.com/i9mr4cj
 
