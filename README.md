@@ -21,4 +21,7 @@ Win10版OpenVPN客户端：https://www.lanzous.com/i9mr48f
 
 Mac版OpenVPN客户端：https://openvpn.net/downloads/openvpn-connect-v2-macos.dmg
 
-Android版OpenVPN客户端：https://d-02.winudf.com/b/apk/ZGUuYmxpbmt0Lm9wZW52cG5fMTYxX2NkZTcyYzI4?_fn=T3BlblZQTiBmb3IgQW5kcm9pZF92MC43LjhfYXBrcHVyZS5jb20uYXBr&_p=ZGUuYmxpbmt0Lm9wZW52cG4&k=36432e03fbc505e6a3a270d4f870e10d5df880aa&uu=http%3A%2F%2F172.16.63.1%2Fb%2Fapk%2FZGUuYmxpbmt0Lm9wZW52cG5fMTYxX2NkZTcyYzI4%3Fk%3Ded223814ce40b3bc475ac5ed4d3ff5c45df880aa
+Android版OpenVPN客户端（官方版）：https://www.lanzous.com/i9mrdgh
+
+Android版OpenVPN客户端（第三方版）：https://www.lanzous.com/i9mrdfg
+
