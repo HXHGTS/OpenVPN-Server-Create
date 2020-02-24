@@ -17,7 +17,7 @@ Mac版客户端（备用）：https://www.softether-download.com/files/softether
 
 Win7版OpenVPN客户端：https://swupdate.openvpn.org/community/releases/openvpn-install-2.4.8-I602-Win7.exe
 
-Win10版OpenVPN客户端：https://swupdate.openvpn.org/community/releases/openvpn-install-2.4.8-I602-Win10.exe
+Win10版OpenVPN客户端：https://www.lanzous.com/i9mr48f
 
 Mac版OpenVPN客户端：https://openvpn.net/downloads/openvpn-connect-v2-macos.dmg
 
