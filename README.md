@@ -10,11 +10,6 @@ Linux版服务器端（备用）：https://www.lanzous.com/i9mr96d
 
 Win版服务器端：https://www.lanzous.com/i9mr4cj
 
-
-Mac版客户端：https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.28-9669-beta/softether-vpnclient-v4.28-9669-beta-2018.09.11-macos-x64-64bit.tar.gz
-
-Mac版客户端（备用）：https://www.softether-download.com/files/softether/v4.28-9669-beta-2018.09.11-tree/Mac_OS_X/SoftEther_VPN_Client/64bit_-_Intel_x64_or_AMD64/softether-vpnclient-v4.28-9669-beta-2018.09.11-macos-x64-64bit.tar.gz
-
 Win7版OpenVPN客户端：https://swupdate.openvpn.org/community/releases/openvpn-install-2.4.8-I602-Win7.exe
 
 Win10版OpenVPN客户端：https://www.lanzous.com/i9mr48f
