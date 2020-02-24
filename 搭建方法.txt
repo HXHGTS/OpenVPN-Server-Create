@@ -19,3 +19,8 @@ ServerPasswordSet
 国内服务器流量转发：
 
 wget -N --no-check-certificate https://raw.githubusercontent.com/xiaohouzivpn/script/master/iptables-pf.sh && chmod +x iptables-pf.sh && bash iptables-pf.sh
+
+改hosts:
+
+151.101.196.133   raw.githubusercontent.com
+
