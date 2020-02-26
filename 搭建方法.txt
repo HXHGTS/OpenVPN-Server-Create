@@ -18,7 +18,7 @@ ServerPasswordSet
 
 国内服务器流量转发：
 
-wget -N --no-check-certificate https://raw.githubusercontent.com/xiaohouzivpn/script/master/iptables-pf.sh && chmod +x iptables-pf.sh && bash iptables-pf.sh
+wget -N --no-check-certificate https://raw.githubusercontent.com/StarLYSS/OpenVPN-Server-Create/master/iptables-pf.sh && chmod +x iptables-pf.sh && bash iptables-pf.sh
 
 改hosts:
 
