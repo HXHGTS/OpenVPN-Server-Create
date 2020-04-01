@@ -35,6 +35,8 @@ chmod +x /etc/rc.d/rc.local
 
 暂停日志系统：
 
+timedatectl set-timezone Asia/Shanghai
+
 wget https://gitee.com/hxhgts/OpenVPN-Server-Create/raw/master/softetherlogpurge.sh
 
 bash softetherlogpurge.sh
