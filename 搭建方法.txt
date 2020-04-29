@@ -18,7 +18,10 @@ ServerPasswordSet
 
 国内服务器流量转发：
 
-wget -N --no-check-certificate https://gitee.com/hxhgts/OpenVPN-Server-Create/raw/master/iptables-pf.sh && chmod +x iptables-pf.sh && 
+wget -N --no-check-certificate https://gitee.com/hxhgts/OpenVPN-Server-Create/raw/master/iptables-pf.sh
+
+chmod +x iptables-pf.sh
+
 bash iptables-pf.sh
 
 服务器禁ping:
