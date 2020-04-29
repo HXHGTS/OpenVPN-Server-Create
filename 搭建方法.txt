@@ -1,4 +1,4 @@
-海外服务器运行：
+海外服务器运行(wget失败可以从链接下载后自行上传)：
 
 yum install wget gcc zlib-devel openssl-devel readline-devel ncurses-devel -y
 
@@ -37,7 +37,7 @@ chmod +x /etc/rc.d/rc.local
 
 timedatectl set-timezone Asia/Shanghai
 
-wget https://github.com/StarLYSS/OpenVPN-Server-Create/raw/master/softetherlogpurge.sh
+wget https://gitee.com/hxhgts/OpenVPN-Server-Create/raw/master/softetherlogpurge.sh
 
 crontab -e
 
