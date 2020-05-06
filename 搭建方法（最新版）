@@ -1,0 +1,49 @@
+海外服务器运行(wget失败可以从链接下载后自行上传)：
+
+yum install wget gcc zlib-devel openssl-devel readline-devel ncurses-devel -y
+
+wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.34-9745-beta/softether-vpnserver-v4.34-9745-beta-2020.04.05-linux-x64-64bit.tar.gz
+
+tar -zvxf softether-vpnserver-v4.34-9745-beta-2020.04.05-linux-x64-64bit.tar.gz
+
+cd vpnserver
+
+make
+
+./vpnserver start
+
+./vpncmd
+
+ServerPasswordSet
+
+国内服务器流量转发：
+
+wget -N --no-check-certificate https://gitee.com/hxhgts/OpenVPN-Server-Create/raw/master/iptables-pf.sh
+
+chmod +x iptables-pf.sh
+
+bash iptables-pf.sh
+
+服务器禁ping:
+
+iptables -A INPUT -p icmp --icmp-type 8 -s 0/0 -j DROP
+
+设置自启：/etc/rc.d/rc.local
+
+cd /root/vpnserver
+
+./vpnserver start
+
+chmod +x /etc/rc.d/rc.local
+
+暂停日志系统：
+
+timedatectl set-timezone Asia/Shanghai
+
+wget https://gitee.com/hxhgts/OpenVPN-Server-Create/raw/master/softetherlogpurge.sh
+
+crontab -e
+
+*/180 * * * * bash softetherlogpurge.sh
+
+crontab -l
