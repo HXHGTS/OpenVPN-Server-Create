@@ -1,6 +1,6 @@
 ### SoftEther稳定版（9669）搭建教程
 
-海外服务器运行(wget失败可以从链接下载后自行上传)：
+海外服务器运行(wget失败可以从链接下载后自行上传，也可以考虑修改hosts 151.101.248.133 raw.githubusercontent.com)：
 
 yum install wget gcc zlib-devel openssl-devel readline-devel ncurses-devel -y
 
@@ -20,7 +20,7 @@ ServerPasswordSet
 
 国内服务器流量转发：
 
-wget -N --no-check-certificate https://gitee.com/hxhgts/OpenVPN-Server-Create/raw/master/iptables-pf.sh
+wget -N --no-check-certificate https://github.com/hxhgts/OpenVPN-Server-Create/raw/master/iptables-pf.sh
 
 chmod +x iptables-pf.sh
 
@@ -42,7 +42,7 @@ chmod +x /etc/rc.d/rc.local
 
 timedatectl set-timezone Asia/Shanghai
 
-wget https://gitee.com/hxhgts/OpenVPN-Server-Create/raw/master/softetherlogpurge.sh
+wget https://github.com/hxhgts/OpenVPN-Server-Create/raw/master/softetherlogpurge.sh
 
 crontab -e
 
@@ -72,7 +72,7 @@ ServerPasswordSet
 
 国内服务器流量转发：
 
-wget -N --no-check-certificate https://gitee.com/hxhgts/OpenVPN-Server-Create/raw/master/iptables-pf.sh
+wget -N --no-check-certificate https://github.com/hxhgts/OpenVPN-Server-Create/raw/master/iptables-pf.sh
 
 chmod +x iptables-pf.sh
 
