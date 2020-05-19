@@ -2,7 +2,7 @@
 
 海外服务器运行(wget失败可以从链接下载后自行上传，也可以考虑修改hosts 151.101.248.133 raw.githubusercontent.com)：
 
-yum install wget gcc zlib-devel openssl-devel readline-devel ncurses-devel -y
+yum install wget gcc gcc-c++ automake autoconf libtool make zlib-devel openssl-devel readline-devel ncurses-devel -y
 
 wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.28-9669-beta/softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz
 
@@ -30,13 +30,32 @@ bash iptables-pf.sh
 
 iptables -A INPUT -p icmp --icmp-type 8 -s 0/0 -j DROP
 
-设置自启：/etc/rc.d/rc.local
+设置自启：
 
-cd /root/vpnserver
+vi /etc/systemd/system/vpnserver.service
 
-./vpnserver start
+[Unit] 
 
-chmod +x /etc/rc.d/rc.local
+Description=SoftEther Server 
+
+After=network.target 
+
+[Service] 
+
+Type=forking 
+
+ExecStart=/root/vpnserver/vpnserver start 
+
+ExecStop= /root/vpnserver/vpnserver stop
+
+[Install] 
+
+WantedBy=multi-user.target
+
+
+systemctl start vpnserver
+
+systemctl enable vpnserver
 
 暂停日志系统：
 
@@ -54,7 +73,7 @@ crontab -l
 
 海外服务器运行(wget失败可以从链接下载后自行上传)：
 
-yum install wget gcc zlib-devel openssl-devel readline-devel ncurses-devel -y
+yum install wget gcc gcc-c++ automake autoconf libtool make zlib-devel openssl-devel readline-devel ncurses-devel -y
 
 wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.34-9745-beta/softether-vpnserver-v4.34-9745-beta-2020.04.05-linux-x64-64bit.tar.gz
 
