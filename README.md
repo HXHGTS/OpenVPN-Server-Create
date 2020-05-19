@@ -102,6 +102,20 @@ crontab -e
 
 crontab -l
 
+安装nslookup：
+
+yum install bind-utils
+
+修改DNS：
+
+vim /etc/sysconfig/network-scripts/ifcfg-eth0
+
+DNS1=8.8.8.8
+
+DNS2=8.8.4.4
+
+service network restart
+
 ### 卸载安骑士（阿里云服务器必须执行！！！）
 
 wget http://update.aegis.aliyun.com/download/uninstall.sh
