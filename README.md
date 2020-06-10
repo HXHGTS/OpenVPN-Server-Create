@@ -36,6 +36,8 @@ iptables -A INPUT -p icmp --icmp-type 8 -s 0/0 -j DROP
 
 vi /etc/systemd/system/vpnserver.service
 
+--------------------------------------------------
+
 [Unit] 
 
 Description=SoftEther Server 
@@ -54,6 +56,7 @@ ExecStop= /root/vpnserver/vpnserver stop
 
 WantedBy=multi-user.target
 
+--------------------------------------------------
 
 systemctl start vpnserver
 
@@ -178,6 +181,14 @@ iptables -I INPUT -s 140.205.225.205/32 -j DROP
 iptables -I INPUT -s 140.205.225.195/32 -j DROP
 
 iptables -I INPUT -s 140.205.225.204/32 -j DROP
+
+### SSH端口修改（修改默认22）
+
+vi /etc/ssh/sshd_config
+
+port 10012
+
+systemctl restart sshd
 
 ### 常用平台OpenVPN客户端下载地址
 
