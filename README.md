@@ -140,6 +140,20 @@ DNS2=8.8.4.4
 
 service network restart
 
+### OpenVPN Access Server搭建（CentOS7）
+
+yum install wget gcc gcc-c++ automake autoconf libtool make zlib-devel openssl-devel readline-devel ncurses-devel -y
+
+yum -y install https://as-repository.openvpn.net/as-repo-centos7.rpm
+
+yum -y install openvpn-as
+
+全部默认回车
+
+访问https://your_server_ip:943
+
+
+
 ### 卸载安骑士（阿里云服务器必须执行！！！）
 
 wget http://update.aegis.aliyun.com/download/uninstall.sh
