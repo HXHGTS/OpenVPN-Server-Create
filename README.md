@@ -84,7 +84,7 @@ systemctl enable vpnserver
 
 
 
-### 安装nslookup：
+### 安装nslookup（用于测试服务器DNS服务器好坏）：
 
 yum install bind-utils
 
