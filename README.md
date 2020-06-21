@@ -163,7 +163,11 @@ iptables -I INPUT -s 140.205.225.204/32 -j DROP
 
 ### 服务器禁ping:
 
-iptables -A INPUT -p icmp --icmp-type 8 -s 0/0 -j DROP
+vi /etc/sysctl.conf
+
+net.ipv4.icmp_echo_ignore_all=1
+
+sysctl -p
 
 ### 暂停日志系统：
 
