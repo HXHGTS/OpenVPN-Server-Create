@@ -104,6 +104,11 @@ DNS2=8.8.4.4
 
 service network restart
 
+### 关闭防火墙
+
+systemctl status firewalld.service
+
+systemctl disable firewalld.service
 
 ### OpenVPN Access Server搭建（CentOS7）
 
@@ -168,7 +173,9 @@ systemctl restart sshd
 
 ### 国内跳转服务器NAT配置（操作系统适用于CentOS7+）
 
-firewall-cmd --state
+systemctl status firewalld.service
+
+systemctl start firewalld.service
 
 sudo firewall-cmd --zone=public --permanent --add-port 本机端口号/tcp
 
