@@ -1,4 +1,4 @@
-### SoftEther稳定版（9669）搭建教程
+### SoftEther稳定版（9680）搭建教程
 
 #### 警告⚠：此技术仅限用于个人搭建游戏加速器使用！！！若用于其他违法目的，后果自负！！！
 
@@ -6,9 +6,9 @@
 
 yum install wget gcc gcc-c++ automake autoconf libtool make zlib-devel openssl-devel readline-devel ncurses-devel -y
 
-wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.28-9669-beta/softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz
+wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.29-9680-rtm/softether-vpnserver-v4.29-9680-rtm-2019.02.28-linux-x64-64bit.tar.gz
 
-tar -zvxf softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz
+tar -zvxf softether-vpnserver-v4.29-9680-rtm-2019.02.28-linux-x64-64bit.tar.gz
 
 cd vpnserver
 
@@ -19,22 +19,6 @@ make
 ./vpncmd
 
 ServerPasswordSet
-
-服务器禁ping:
-
-iptables -A INPUT -p icmp --icmp-type 8 -s 0/0 -j DROP
-
-暂停日志系统：
-
-timedatectl set-timezone Asia/Shanghai
-
-wget https://github.com/hxhgts/OpenVPN-Server-Create/raw/master/softetherlogpurge.sh
-
-crontab -e
-
-*/180 * * * * bash softetherlogpurge.sh
-
-crontab -l
 
 ### SoftEther最新版搭建教程
 
@@ -56,9 +40,9 @@ make
 
 ServerPasswordSet
 
-设置自启：
+### 设置自启：
 
-方案一：
+#### 方案一：
 
 vi /etc/rc.d/rc.local
 
@@ -68,7 +52,7 @@ cd /root/vpnserver
 
 chmod +x /etc/rc.d/rc.local
 
-方案二：
+#### 方案二：
 
 vi /etc/systemd/system/vpnserver.service
 
@@ -98,23 +82,13 @@ systemctl start vpnserver
 
 systemctl enable vpnserver
 
-暂停日志系统：
 
-timedatectl set-timezone Asia/Shanghai
 
-wget https://gitee.com/hxhgts/OpenVPN-Server-Create/raw/master/softetherlogpurge.sh
-
-crontab -e
-
-*/180 * * * * bash softetherlogpurge.sh
-
-crontab -l
-
-安装nslookup：
+### 安装nslookup：
 
 yum install bind-utils
 
-修改DNS：
+### 修改DNS：
 
 vim /etc/resolv.conf
 
@@ -129,6 +103,7 @@ DNS1=8.8.8.8
 DNS2=8.8.4.4
 
 service network restart
+
 
 ### OpenVPN Access Server搭建（CentOS7）
 
@@ -186,6 +161,22 @@ iptables -I INPUT -s 140.205.225.195/32 -j DROP
 
 iptables -I INPUT -s 140.205.225.204/32 -j DROP
 
+### 服务器禁ping:
+
+iptables -A INPUT -p icmp --icmp-type 8 -s 0/0 -j DROP
+
+### 暂停日志系统：
+
+timedatectl set-timezone Asia/Shanghai
+
+wget https://github.com/hxhgts/OpenVPN-Server-Create/raw/master/softetherlogpurge.sh
+
+crontab -e
+
+*/180 * * * * bash softetherlogpurge.sh
+
+crontab -l
+
 ### SSH端口修改（修改默认22）
 
 vi /etc/ssh/sshd_config
@@ -203,6 +194,7 @@ systemctl restart sshd
 [Mac版OpenVPN客户端](https://www.lanzous.com/i9q7ylc)        [Android版OpenVPN客户端（第三方版）](https://www.lanzous.com/i9mrdfg)
 
 #### 分享密码：a4CXjk
+
 
 ### 国内跳转服务器NAT配置（操作系统适用于CentOS7+）
 
