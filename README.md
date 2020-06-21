@@ -117,6 +117,15 @@ yum -y install openvpn-as
 
 访问https://your_server_ip:943
 
+### OpenVPN Access Server搭建（CentOS8）
+
+yum -y install https://as-repository.openvpn.net/as-repo-centos8.rpm
+
+yum -y install openvpn-as
+
+全部默认回车
+
+访问https://your_server_ip:943
 
 
 ### 卸载安骑士（阿里云服务器必须执行！！！）
