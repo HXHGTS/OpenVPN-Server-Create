@@ -20,47 +20,9 @@ make
 
 ServerPasswordSet
 
-国内服务器流量转发：
-
-wget -N --no-check-certificate https://github.com/hxhgts/OpenVPN-Server-Create/raw/master/iptables-pf.sh
-
-chmod +x iptables-pf.sh
-
-bash iptables-pf.sh
-
 服务器禁ping:
 
 iptables -A INPUT -p icmp --icmp-type 8 -s 0/0 -j DROP
-
-设置自启：
-
-vi /etc/systemd/system/vpnserver.service
-
---------------------------------------------------
-
-[Unit] 
-
-Description=SoftEther Server 
-
-After=network.target 
-
-[Service] 
-
-Type=forking 
-
-ExecStart=/root/vpnserver/vpnserver start 
-
-ExecStop= /root/vpnserver/vpnserver stop
-
-[Install] 
-
-WantedBy=multi-user.target
-
---------------------------------------------------
-
-systemctl start vpnserver
-
-systemctl enable vpnserver
 
 暂停日志系统：
 
@@ -94,25 +56,47 @@ make
 
 ServerPasswordSet
 
-国内服务器流量转发：
+设置自启：
 
-wget -N --no-check-certificate https://github.com/hxhgts/OpenVPN-Server-Create/raw/master/iptables-pf.sh
+方案一：
 
-chmod +x iptables-pf.sh
-
-bash iptables-pf.sh
-
-服务器禁ping:
-
-iptables -A INPUT -p icmp --icmp-type 8 -s 0/0 -j DROP
-
-设置自启：/etc/rc.d/rc.local
+vi /etc/rc.d/rc.local
 
 cd /root/vpnserver
 
 ./vpnserver start
 
 chmod +x /etc/rc.d/rc.local
+
+方案二：
+
+vi /etc/systemd/system/vpnserver.service
+
+--------------------------------------------------
+
+[Unit] 
+
+Description=SoftEther Server 
+
+After=network.target 
+
+[Service] 
+
+Type=forking 
+
+ExecStart=/root/vpnserver/vpnserver start 
+
+ExecStop= /root/vpnserver/vpnserver stop
+
+[Install] 
+
+WantedBy=multi-user.target
+
+--------------------------------------------------
+
+systemctl start vpnserver
+
+systemctl enable vpnserver
 
 暂停日志系统：
 
@@ -131,6 +115,12 @@ crontab -l
 yum install bind-utils
 
 修改DNS：
+
+vim /etc/resolv.conf
+
+nameserver 8.8.8.8
+
+nameserver 8.8.4.4
 
 vim /etc/sysconfig/network-scripts/ifcfg-eth0
 
@@ -213,4 +203,21 @@ systemctl restart sshd
 [Mac版OpenVPN客户端](https://www.lanzous.com/i9q7ylc)        [Android版OpenVPN客户端（第三方版）](https://www.lanzous.com/i9mrdfg)
 
 #### 分享密码：a4CXjk
+
+### 国内跳转服务器NAT配置（操作系统适用于CentOS7+）
+
+firewall-cmd --state
+
+sudo firewall-cmd --zone=public --permanent --add-port 本机端口号/tcp
+
+sudo firewall-cmd --zone=public --permanent --add-port 本机端口号/udp
+
+sudo firewall-cmd --zone=public --permanent --add-forward-port=port=本机端口号:proto=tcp:toport=目标端口号:toaddr=目标地址
+
+sudo firewall-cmd --zone=public --permanent --add-forward-port=port=本机端口号:proto=udp:toport=目标端口号:toaddr=目标地址
+
+sudo firewall-cmd --zone=public --permanent --add-masquerade
+
+sudo firewall-cmd --reload
+
 
