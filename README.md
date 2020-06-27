@@ -4,9 +4,9 @@
 
 ### SoftEther稳定版（9680）搭建教程
 
-海外服务器运行(wget失败可以从链接下载后自行上传，也可以考虑修改hosts 151.101.248.133 raw.githubusercontent.com)：
+yum update -y
 
-yum install wget gcc gcc-c++ automake autoconf libtool make zlib-devel openssl-devel readline-devel ncurses-devel -y
+yum install wget -y
 
 wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.29-9680-rtm/softether-vpnserver-v4.29-9680-rtm-2019.02.28-linux-x64-64bit.tar.gz
 
@@ -24,9 +24,9 @@ ServerPasswordSet
 
 ### SoftEther最新版搭建教程
 
-海外服务器运行(wget失败可以从链接下载后自行上传)：
+yum update -y
 
-yum install wget gcc gcc-c++ automake autoconf libtool make zlib-devel openssl-devel readline-devel ncurses-devel -y
+yum install wget -y
 
 wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.34-9745-beta/softether-vpnserver-v4.34-9745-beta-2020.04.05-linux-x64-64bit.tar.gz
 
