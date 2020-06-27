@@ -112,7 +112,7 @@ systemctl disable firewalld.service
 
 ### OpenVPN Access Server搭建（CentOS7）
 
-yum install wget gcc gcc-c++ automake autoconf libtool make zlib-devel openssl-devel readline-devel ncurses-devel -y
+yum update -y
 
 yum -y install https://as-repository.openvpn.net/as-repo-centos7.rpm
 
@@ -123,6 +123,8 @@ yum -y install openvpn-as
 访问https://your_server_ip:943
 
 ### OpenVPN Access Server搭建（CentOS8）
+
+yum update -y
 
 yum -y install https://as-repository.openvpn.net/as-repo-centos8.rpm
 
