@@ -1,5 +1,7 @@
 ## 警告⚠：此技术仅限用于个人搭建游戏加速器使用！！！若用于其他违法目的，后果自负！！！
 
+## 搭建方式一：SoftEther Server
+
 ### SoftEther稳定版（9680）搭建教程
 
 海外服务器运行(wget失败可以从链接下载后自行上传，也可以考虑修改hosts 151.101.248.133 raw.githubusercontent.com)：
@@ -82,7 +84,34 @@ systemctl start vpnserver
 
 systemctl enable vpnserver
 
+## 搭建方式二：OpenVPN Access Server
 
+### OpenVPN Access Server搭建（CentOS7）
+
+yum update -y
+
+yum -y install https://as-repository.openvpn.net/as-repo-centos7.rpm
+
+yum -y install openvpn-as
+
+全部默认回车
+
+访问https://your_server_ip:943
+
+### OpenVPN Access Server搭建（CentOS8）
+
+yum update -y
+
+yum -y install https://as-repository.openvpn.net/as-repo-centos8.rpm
+
+yum -y install openvpn-as
+
+全部默认回车
+
+访问https://your_server_ip:943
+
+
+## 服务器端优化
 
 ### 安装nslookup（用于测试服务器DNS服务器好坏）：
 
@@ -110,30 +139,6 @@ systemctl status firewalld.service
 
 systemctl disable firewalld.service
 
-### OpenVPN Access Server搭建（CentOS7）
-
-yum update -y
-
-yum -y install https://as-repository.openvpn.net/as-repo-centos7.rpm
-
-yum -y install openvpn-as
-
-全部默认回车
-
-访问https://your_server_ip:943
-
-### OpenVPN Access Server搭建（CentOS8）
-
-yum update -y
-
-yum -y install https://as-repository.openvpn.net/as-repo-centos8.rpm
-
-yum -y install openvpn-as
-
-全部默认回车
-
-访问https://your_server_ip:943
-
 ### 服务器禁ping:
 
 vi /etc/sysctl.conf
@@ -142,7 +147,7 @@ net.ipv4.icmp_echo_ignore_all=1
 
 sysctl -p
 
-### 暂停日志系统：
+### 暂停日志系统（针对SoftEther Server）：
 
 timedatectl set-timezone Asia/Shanghai
 
@@ -172,66 +177,3 @@ systemctl restart sshd
 
 #### 分享密码：a4CXjk
 
-
-### 国内跳转服务器NAT配置（操作系统适用于CentOS7+）
-
-systemctl status firewalld.service
-
-systemctl start firewalld.service
-
-sudo firewall-cmd --zone=public --permanent --add-port 本机端口号/tcp
-
-sudo firewall-cmd --zone=public --permanent --add-port 本机端口号/udp
-
-sudo firewall-cmd --zone=public --permanent --add-forward-port=port=本机端口号:proto=tcp:toport=目标端口号:toaddr=目标地址
-
-sudo firewall-cmd --zone=public --permanent --add-forward-port=port=本机端口号:proto=udp:toport=目标端口号:toaddr=目标地址
-
-sudo firewall-cmd --zone=public --permanent --add-masquerade
-
-sudo firewall-cmd --reload
-
-
-### 卸载安骑士（阿里云服务器必须执行！！！）
---------------------------------------------------------------
-wget http://update.aegis.aliyun.com/download/uninstall.sh
-
-chmod +x uninstall.sh
-
-./uninstall.sh
-
-wget http://update.aegis.aliyun.com/download/quartz_uninstall.sh
-
-chmod +x quartz_uninstall.sh
-
-./quartz_uninstall.sh
-
-pkill aliyun-service
-
-rm -fr /etc/init.d/agentwatch /usr/sbin/aliyun-service
-
-rm -rf /usr/local/aegis*
-
-iptables -I INPUT -s 140.205.201.0/28 -j DROP
-
-iptables -I INPUT -s 140.205.201.16/29 -j DROP
-
-iptables -I INPUT -s 140.205.201.32/28 -j DROP
-
-iptables -I INPUT -s 140.205.225.192/29 -j DROP
-
-iptables -I INPUT -s 140.205.225.200/30 -j DROP
-
-iptables -I INPUT -s 140.205.225.184/29 -j DROP
-
-iptables -I INPUT -s 140.205.225.183/32 -j DROP
-
-iptables -I INPUT -s 140.205.225.206/32 -j DROP
-
-iptables -I INPUT -s 140.205.225.205/32 -j DROP
-
-iptables -I INPUT -s 140.205.225.195/32 -j DROP
-
-iptables -I INPUT -s 140.205.225.204/32 -j DROP
-
---------------------------------------------------------------
