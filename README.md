@@ -6,7 +6,7 @@
 
 yum update -y
 
-yum install wget -y
+yum install wget gcc -y
 
 wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.28-9669-beta/softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz
 
@@ -26,7 +26,7 @@ ServerPasswordSet
 
 yum update -y
 
-yum install wget -y
+yum install wget gcc -y
 
 wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.34-9745-beta/softether-vpnserver-v4.34-9745-beta-2020.04.05-linux-x64-64bit.tar.gz
 
