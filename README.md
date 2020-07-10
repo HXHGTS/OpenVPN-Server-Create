@@ -2,15 +2,15 @@
 
 ## 搭建方式一：SoftEther Server
 
-### SoftEther稳定版（9680）搭建教程
+### SoftEther稳定版（9669）搭建教程
 
 yum update -y
 
 yum install wget -y
 
-wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.29-9680-rtm/softether-vpnserver-v4.29-9680-rtm-2019.02.28-linux-x64-64bit.tar.gz
+wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.28-9669-beta/softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz
 
-tar -zvxf softether-vpnserver-v4.29-9680-rtm-2019.02.28-linux-x64-64bit.tar.gz
+tar -zvxf softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz
 
 cd vpnserver
 
