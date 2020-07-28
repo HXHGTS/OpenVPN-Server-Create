@@ -94,6 +94,10 @@ yum -y install https://as-repository.openvpn.net/as-repo-centos7.rpm
 
 yum -y install openvpn-as
 
+passwd openvpn
+
+设置密码
+
 全部默认回车
 
 访问https://your_server_ip:943
@@ -106,7 +110,9 @@ yum -y install https://as-repository.openvpn.net/as-repo-centos8.rpm
 
 yum -y install openvpn-as
 
-全部默认回车
+passwd openvpn
+
+设置密码
 
 访问https://your_server_ip:943
 
@@ -171,9 +177,9 @@ systemctl restart sshd
 
 [Linux版服务器端](https://lanzous.com/ic2bw2j)               [Win版服务器端](https://lanzous.com/ic2bx7a)
 
-[Win7版OpenVPN客户端](https://www.lanzous.com/i9q7ykb)       [Win10版OpenVPN客户端](https://www.lanzous.com/i9mr48f)
+[Win7版](https://wwa.lanzous.com/i5DKOf2aj1c)       [Win10版](https://wwa.lanzous.com/iuQdyf2aj9a)
 
-[Mac版OpenVPN客户端](https://www.lanzous.com/i9q7ylc)        [Android版OpenVPN客户端（第三方版）](https://www.lanzous.com/i9mrdfg)
+[Mac版](https://www.lanzous.com/i9q7ylc)        [Android版](https://www.lanzous.com/i9mrdfg)
 
 #### 分享密码：a4CXjk
 
