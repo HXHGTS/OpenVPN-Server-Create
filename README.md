@@ -2,27 +2,7 @@
 
 ## 搭建方式一：SoftEther Server
 
-### SoftEther稳定版（9669）搭建教程
-
-yum update -y
-
-yum install wget gcc -y
-
-wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.28-9669-beta/softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz
-
-tar -zvxf softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz
-
-cd vpnserver
-
-make
-
-./vpnserver start
-
-./vpncmd
-
-ServerPasswordSet
-
-### SoftEther最新版搭建教程
+### SoftEther稳定版搭建教程(支持tls1.3)
 
 yum update -y
 
