@@ -84,6 +84,8 @@ passwd openvpn
 
 windows-driver wintun
 
+duplicate-cn
+
 ### OpenVPN Access Server搭建（CentOS8）
 
 yum update -y
@@ -99,6 +101,8 @@ passwd openvpn
 访问https://your_server_ip:943
 
 windows-driver wintun
+
+duplicate-cn
 
 ## 服务器端优化
 
