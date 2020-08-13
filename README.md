@@ -18,11 +18,7 @@ ServerPasswordSet
 
 #### 方案一：
 ```
-vi /etc/rc.d/rc.local
-
-cd /root/vpnserver
-
-./vpnserver start
+echo "cd /root/vpnserver" >>/etc/rc.d/rc.local && echo "./vpnserver start" >>/etc/rc.d/rc.local
 
 chmod +x /etc/rc.d/rc.local
 ```
@@ -60,13 +56,7 @@ systemctl enable vpnserver
 
 ### OpenVPN Access Server搭建（CentOS7）
 ```
-yum update -y
-
-yum -y install https://as-repository.openvpn.net/as-repo-centos7.rpm
-
-yum -y install openvpn-as
-
-passwd openvpn
+yum update -y && yum -y install https://as-repository.openvpn.net/as-repo-centos7.rpm && yum -y install openvpn-as && passwd openvpn
 ```
 设置密码
 
@@ -80,13 +70,7 @@ duplicate-cn
 ```
 ### OpenVPN Access Server搭建（CentOS8）
 ```
-yum update -y
-
-yum -y install https://as-repository.openvpn.net/as-repo-centos8.rpm
-
-yum -y install openvpn-as
-
-passwd openvpn
+yum update -y && yum -y install https://as-repository.openvpn.net/as-repo-centos8.rpm && yum -y install openvpn-as && passwd openvpn
 ```
 设置密码
 
@@ -104,17 +88,13 @@ yum install bind-utils
 ```
 ### 修改DNS：
 ```
-vim /etc/resolv.conf
+echo "nameserver 8.8.8.8" >/etc/resolv.conf
 
-nameserver 8.8.8.8
+echo "nameserver 8.8.4.4" >>/etc/resolv.conf
 
-nameserver 8.8.4.4
+echo "DNS1=8.8.8.8" >>/etc/sysconfig/network-scripts/ifcfg-eth0
 
-vim /etc/sysconfig/network-scripts/ifcfg-eth0
-
-DNS1=8.8.8.8
-
-DNS2=8.8.4.4
+echo "DNS2=8.8.4.4" >>/etc/sysconfig/network-scripts/ifcfg-eth0
 
 service network restart
 ```
@@ -126,11 +106,7 @@ systemctl disable firewalld.service
 ```
 ### 服务器禁ping:
 ```
-vi /etc/sysctl.conf
-
-net.ipv4.icmp_echo_ignore_all=1
-
-sysctl -p
+echo "net.ipv4.icmp_echo_ignore_all=1">>/etc/sysctl.conf && sysctl -p
 ```
 ### 暂停日志系统（针对SoftEther Server）：
 ```
