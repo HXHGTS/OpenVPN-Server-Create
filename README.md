@@ -2,7 +2,7 @@
 
 ## 搭建方式一：SoftEther Server
 
-### SoftEther稳定版搭建教程(支持tls1.3)
+### SoftEther稳定版搭建教程
 ```
 sudo yum update -y && sudo yum install wget gcc -y
 
