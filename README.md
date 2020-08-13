@@ -8,9 +8,9 @@ yum update -y
 
 yum install wget gcc -y
 
-wget https://www.softether-download.com/files/softether/v4.34-9745-rtm-2020.04.05-tree/Linux/SoftEther_VPN_Server/64bit_-_Intel_x64_or_AMD64/softether-vpnserver-v4.34-9745-rtm-2020.04.05-linux-x64-64bit.tar.gz
+wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.28-9669-beta/softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz
 
-tar -zvxf softether-vpnserver-v4.34-9745-rtm-2020.04.05-linux-x64-64bit.tar.gz
+tar -zvxf softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz
 
 cd vpnserver
 
@@ -162,7 +162,7 @@ systemctl restart sshd
 ```
 ### 常用平台OpenVPN客户端下载地址
 
-[Linux版服务器端](https://lanzous.com/ic2bw2j)               [Win版服务器端](https://lanzous.com/ic2bx7a)
+[SoftEther Linux版服务器端](https://lanzous.com/ic2bw2j)               [SoftEther Win版服务器端](https://lanzous.com/ic2bx7a)
 
 [Win7版](https://wwa.lanzous.com/i5DKOf2aj1c)       [Win10版](https://wwa.lanzous.com/iuQdyf2aj9a)
 
