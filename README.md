@@ -4,19 +4,11 @@
 
 ### SoftEther稳定版搭建教程(支持tls1.3)
 ```
-yum update -y
+sudo yum update -y && sudo yum install wget gcc -y
 
-yum install wget gcc -y
+wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.28-9669-beta/softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz && tar -zvxf softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz && cd vpnserver && make
 
-wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.28-9669-beta/softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz
-
-tar -zvxf softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz
-
-cd vpnserver
-
-make
-
-./vpnserver start
+sudo ./vpnserver start
 
 ./vpncmd
 
