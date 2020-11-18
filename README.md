@@ -128,6 +128,11 @@ port 10012
 
 systemctl restart sshd
 ```
+
+### 新版OpenVPN强制启用wintun参数
+```
+windows-driver wintun
+```
 ### 常用平台OpenVPN客户端下载地址
 
 [SoftEther Linux版服务器端](https://lanzous.com/ic2bw2j)               [SoftEther Win版服务器端](https://lanzous.com/ic2bx7a)
