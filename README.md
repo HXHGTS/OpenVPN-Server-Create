@@ -4,11 +4,11 @@
 
 ### SoftEther稳定版搭建教程
 ```
-sudo yum update -y && sudo yum install wget gcc -y
+yum install wget gcc bind-utils -y
 
-wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.28-9669-beta/softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz && tar -zvxf softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz && cd vpnserver && make
+wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.34-9745-beta/softether-vpnserver-v4.34-9745-beta-2020.04.05-linux-x64-64bit.tar.gz && tar -zvxf softether-vpnserver-v4.34-9745-beta-2020.04.05-linux-x64-64bit.tar.gz && cd vpnserver && make
 
-sudo ./vpnserver start
+./vpnserver start
 
 ./vpncmd
 
