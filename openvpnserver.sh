@@ -54,7 +54,7 @@ sysctl -p
 
 iptables -t nat -A POSTROUTING -s 10.0.0.0/24 -o eth0 -j MASQUERADE
 
-iptables -I INPUT -p tcp --dport 10010 -j ACCEPT
+iptables -I INPUT -p udp --dport 10010 -j ACCEPT
 
 service iptables save
 
