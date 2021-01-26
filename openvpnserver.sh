@@ -8,11 +8,11 @@ yum install iptables iptables-services openvpn -y
 
 cd /opt/
 
-wget https://github.com/OpenVPN/easy-rsa/releases/download/v3.0.7/EasyRSA-3.0.7.tgz
+wget https://github.com/OpenVPN/easy-rsa/releases/download/v3.0.8/EasyRSA-3.0.8.tgz
 
-tar xf EasyRSA-3.0.7.tgz
+tar xf EasyRSA-3.0.8.tgz
 
-cp -r EasyRSA-3.0.7 /etc/openvpn/easy-rsa3
+cp -r EasyRSA-3.0.8 /etc/openvpn/easy-rsa3
 
 cp /etc/openvpn/easy-rsa3/vars.example /etc/openvpn/easy-rsa3/vars
 
@@ -43,8 +43,6 @@ cp private/server.key issued/server.crt /etc/openvpn/server/
 cp private/client.key issued/client.crt /etc/openvpn/client/
 
 cd /etc/openvpn/
-
-cp /usr/share/doc/openvpn-2.4.8/sample/sample-config-files/server.conf ./
 
 wget https://raw.githubusercontent.com/HXHGTS/OpenVPN-Server-Create/master/server.conf -O /etc/openvpn/server.conf
 
