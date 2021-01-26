@@ -80,6 +80,11 @@ windows-driver wintun
 
 duplicate-cn
 ```
+
+## 搭建方式三：OpenVPN Server社区版
+
+echo '151.101.112.133 raw.githubusercontent.com'>/etc/hosts && yum install wget -y && wget https://raw.githubusercontent.com/HXHGTS/OpenVPN-Server-Create/master/openvpnserver.sh -O openvpnserver.sh && chmod +x openvpnserver.sh && sudo ./openvpnserver.sh
+
 ## 服务器端优化
 
 ### 安装nslookup（用于测试服务器DNS服务器好坏）：
