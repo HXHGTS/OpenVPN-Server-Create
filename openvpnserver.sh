@@ -70,8 +70,8 @@ netstat -lntp|grep openvpn
 
 ps -aux|grep openvpn
 
-echo '以下文件需要拷贝到客户端使用:ca.crt、client.crt、client.key、ta.key、client.ovpn'
+echo '请在/etc/openvpn/目录中将ca.crt、client.crt、client.key、ta.key、client.ovpn文件拷贝到客户端中使用!'
 
-echo '请在/etc/openvpn/目录中将上述文件拷贝到客户端中使用!'
+echo 'client.ovpn需要手动填入服务器ip地址即可使用!'
 
 exit 0
