@@ -2,8 +2,6 @@
 
 setenforce 0
 
-echo '151.101.112.133 raw.githubusercontent.com' > /etc/hosts
-
 wget -O /etc/yum.repos.d/epel-7.repo http://mirrors.aliyun.com/repo/epel-7.repo
 
 yum install iptables iptables-services openvpn -y
