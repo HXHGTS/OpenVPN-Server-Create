@@ -2,13 +2,15 @@
 
 setenforce 0
 
+echo '151.101.112.133 raw.githubusercontent.com' > /etc/hosts
+
 wget -O /etc/yum.repos.d/epel-7.repo http://mirrors.aliyun.com/repo/epel-7.repo
 
 yum install iptables iptables-services openvpn -y
 
 cd /opt/
 
-wget https://github.com/OpenVPN/easy-rsa/releases/download/v3.0.8/EasyRSA-3.0.8.tgz
+wget https://github.com/OpenVPN/easy-rsa/releases/download/v3.0.8/EasyRSA-3.0.8.tgz -O EasyRSA-3.0.8.tgz
 
 tar xf EasyRSA-3.0.8.tgz
 
