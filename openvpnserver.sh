@@ -22,15 +22,17 @@ cd /etc/openvpn/easy-rsa3/
 
 ./easyrsa init-pki
 
+echo '询问Common Name时请保持输入一致即可!'
+
 ./easyrsa build-ca nopass
 
 ./easyrsa gen-req server nopass
 
-./easyrsa sign-req server server
+echo yes | ./easyrsa sign-req server server
 
 ./easyrsa gen-req client nopass
 
-./easyrsa sign-req client client
+echo yes | ./easyrsa sign-req client client
 
 ./easyrsa gen-dh
 
