@@ -65,3 +65,9 @@ systemctl start openvpn@server
 netstat -lntp|grep openvpn
 
 ps -aux|grep openvpn
+
+echo '以下文件需要拷贝到客户端使用:ca.crt、client.crt、client.key、ta.key、client.ovpn'
+
+echo '请在/etc/openvpn/目录中将上述文件拷贝到客户端中使用!'
+
+exit 0
