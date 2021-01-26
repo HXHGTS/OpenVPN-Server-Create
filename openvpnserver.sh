@@ -4,7 +4,7 @@ setenforce 0
 
 wget -O /etc/yum.repos.d/epel-7.repo http://mirrors.aliyun.com/repo/epel-7.repo
 
-yum install openvpn -y
+yum install iptables iptables-services openvpn -y
 
 cd /opt/
 
@@ -45,6 +45,8 @@ cp private/client.key issued/client.crt /etc/openvpn/client/
 cd /etc/openvpn/
 
 cp /usr/share/doc/openvpn-2.4.8/sample/sample-config-files/server.conf ./
+
+wget https://raw.githubusercontent.com/HXHGTS/OpenVPN-Server-Create/master/server.conf -O /etc/openvpn/server.conf
 
 chown root.openvpn /etc/openvpn/* -R
 
