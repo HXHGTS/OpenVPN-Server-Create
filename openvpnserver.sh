@@ -52,9 +52,9 @@ echo 'net.ipv4.ip_forward=1' >> /etc/sysctl.conf
 
 sysctl -p 
 
-iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
+iptables -t nat -A POSTROUTING -s 10.0.0.0/24 -o eth0 -j MASQUERADE
 
-iptables -I INPUT -p tcp --dport 1194 -j ACCEPT
+iptables -I INPUT -p tcp --dport 10010 -j ACCEPT
 
 service iptables save
 
