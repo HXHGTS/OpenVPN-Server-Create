@@ -4,6 +4,14 @@ echo '正在关闭SELinux. . .'
 
 setenforce 0
 
+echo '正在导入安装源. . .'
+
+rpm -Uvh --force http://mirror.centos.org/centos-7/7.9.2009/os/x86_64/Packages/centos-release-7-9.2009.0.el7.centos.x86_64.rpm
+
+yum clean all
+
+yum makecache
+
 echo '正在执行安装. . .'
 
 yum install iptables iptables-services ip6tables ip6tables-services openvpn -y
