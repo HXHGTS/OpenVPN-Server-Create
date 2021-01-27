@@ -86,6 +86,6 @@ ps -aux|grep openvpn
 
 echo '请在/etc/openvpn/目录中将ca.crt、client.crt、client.key、ta.key、client.ovpn文件拷贝到客户端中使用!'
 
-echo 'client.ovpn需要手动填入服务器ip地址即可使用!'
+echo 'client.ovpn需要手动填入服务器ip地址!'
 
 exit 0
