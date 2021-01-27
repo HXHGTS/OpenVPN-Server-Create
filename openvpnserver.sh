@@ -12,9 +12,17 @@ yum clean all
 
 yum makecache
 
+yum install epel-release -y
+
+yum update -y
+
 yum install yum-plugin-copr -y
 
-yum copr enable dsommers/openvpn-release
+sleep 3
+
+yum copr enable dsommers/openvpn-release -y
+
+sleep 3
 
 echo '正在执行安装. . .'
 
