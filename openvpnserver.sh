@@ -82,9 +82,7 @@ sysctl -p
 
 echo "IPV6FORWARDING=yes" >> /etc/sysconfig/network
 
-iptables --table nat --append POSTROUTING --out-interface ens192 --jump MASQUERADE
-
-ip6tables --table nat --append POSTROUTING --out-interface ens192 --jump MASQUERADE
+iptables -t nat -A POSTROUTING -s 10.0.0.0/24 -o eth0 -j MASQUERADE
 
 service iptables save
 
@@ -92,9 +90,9 @@ systemctl restart iptables
 
 systemctl restart network
 
-systemctl start openvpn@server
+systemctl start openvpn-server@server.service
 
-systemctl enable openvpn@server
+systemctl enable openvpn-server@server.service
 
 netstat -lntp|grep openvpn
 
