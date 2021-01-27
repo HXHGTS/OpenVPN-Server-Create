@@ -12,9 +12,13 @@ yum clean all
 
 yum makecache
 
+yum install yum-plugin-copr -y
+
+yum copr enable dsommers/openvpn-release
+
 echo '正在执行安装. . .'
 
-yum install iptables iptables-services ip6tables ip6tables-services openvpn -y
+yum install openvpn iptables iptables-services ip6tables ip6tables-services -y
 
 cd /opt/
 
