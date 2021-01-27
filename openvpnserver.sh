@@ -4,7 +4,7 @@ setenforce 0
 
 wget -O /etc/yum.repos.d/epel-7.repo http://mirrors.aliyun.com/repo/epel-7.repo
 
-yum install iptables iptables-services openvpn -y
+yum install iptables iptables-services ip6tables ip6tables-services openvpn -y
 
 cd /opt/
 
@@ -54,9 +54,9 @@ echo 'net.ipv4.ip_forward=1' >> /etc/sysctl.conf
 
 sysctl -p 
 
-iptables -t nat -A POSTROUTING -s 10.0.0.0/24 -o eth0 -j MASQUERADE
+iptables --table nat --append POSTROUTING --out-interface ens192 --jump MASQUERADE
 
-iptables -I INPUT -p udp --dport 10010 -j ACCEPT
+ip6tables --table nat --append POSTROUTING --out-interface ens192 --jump MASQUERADE
 
 service iptables save
 
