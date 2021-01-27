@@ -4,10 +4,6 @@ echo '正在关闭SELinux. . .'
 
 setenforce 0
 
-echo '正在导入安装源. . .'
-
-wget -O /etc/yum.repos.d/epel-7.repo http://mirrors.aliyun.com/repo/epel-7.repo
-
 echo '正在执行安装. . .'
 
 yum install iptables iptables-services ip6tables ip6tables-services openvpn -y
