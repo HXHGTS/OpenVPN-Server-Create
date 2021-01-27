@@ -1,8 +1,14 @@
 #!/bin/sh
 
+echo '正在关闭SELinux. . .'
+
 setenforce 0
 
+echo '正在导入安装源. . .'
+
 wget -O /etc/yum.repos.d/epel-7.repo http://mirrors.aliyun.com/repo/epel-7.repo
+
+echo '正在执行安装. . .'
 
 yum install iptables iptables-services ip6tables ip6tables-services openvpn -y
 
@@ -20,9 +26,11 @@ cd /etc/openvpn/easy-rsa3/
 
 ./easyrsa init-pki
 
-echo '询问Common Name时请保持输入一致即可!'
+echo '正在生成证书与密钥文件. . .'
 
 ./easyrsa build-ca nopass
+
+echo '询问Common Name时请保持输入一致即可!'
 
 ./easyrsa gen-req server nopass
 
@@ -52,7 +60,11 @@ chown root.openvpn /etc/openvpn/* -R
 
 echo 'net.ipv4.ip_forward=1' >> /etc/sysctl.conf
 
-sysctl -p 
+echo "net.ipv6.conf.all.forwarding = 1" >> /etc/sysctl.conf
+
+sysctl -p
+
+echo "IPV6FORWARDING=yes" >> /etc/sysconfig/network
 
 iptables --table nat --append POSTROUTING --out-interface ens192 --jump MASQUERADE
 
@@ -62,7 +74,11 @@ service iptables save
 
 systemctl restart iptables
 
+systemctl restart network
+
 systemctl start openvpn@server
+
+systemctl enable openvpn@server
 
 netstat -lntp|grep openvpn
 
