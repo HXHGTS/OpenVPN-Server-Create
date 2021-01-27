@@ -26,7 +26,7 @@ sleep 3
 
 echo '正在执行安装. . .'
 
-yum install openvpn iptables iptables-services ip6tables ip6tables-services -y
+yum install openvpn iptables iptables-services -y
 
 cd /opt/
 
