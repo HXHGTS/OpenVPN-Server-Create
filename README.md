@@ -84,7 +84,7 @@ duplicate-cn
 ## 搭建方式三：OpenVPN Server社区版
 
 ```
-echo '151.101.112.133 raw.githubusercontent.com'>/etc/hosts && yum install wget -y && wget https://raw.githubusercontent.com/HXHGTS/OpenVPN-Server-Create/master/openvpnserver.sh -O openvpnserver.sh && chmod +x openvpnserver.sh && sudo ./openvpnserver.sh
+yum install wget -y && wget https://cdn.jsdelivr.net/gh/HXHGTS/OpenVPN-Server-Create/openvpnserver.sh -O openvpnserver.sh && chmod +x openvpnserver.sh && sudo ./openvpnserver.sh
 ```
 
 ## 服务器端优化
@@ -117,9 +117,7 @@ echo "net.ipv4.icmp_echo_ignore_all=1">>/etc/sysctl.conf && sysctl -p
 ```
 ### 暂停日志系统（针对SoftEther Server）：
 ```
-timedatectl set-timezone Asia/Shanghai
-
-wget https://github.com/hxhgts/OpenVPN-Server-Create/raw/master/softetherlogpurge.sh
+wget https://cdn.jsdelivr.net/gh/HXHGTS/OpenVPN-Server-Create/softetherlogpurge.sh
 
 crontab -e
 
