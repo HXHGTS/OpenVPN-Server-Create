@@ -68,9 +68,9 @@ cp private/server.key issued/server.crt /etc/openvpn/server/
 
 cp private/client.key issued/client.crt /etc/openvpn/client/
 
-wget https://raw.githubusercontent.com/HXHGTS/OpenVPN-Server-Create/master/server.conf -O /etc/openvpn/server.conf
+wget https://cdn.jsdelivr.net/gh/HXHGTS/OpenVPN-Server-Create/server.conf -O /etc/openvpn/server.conf
 
-wget https://raw.githubusercontent.com/HXHGTS/OpenVPN-Server-Create/master/client.conf -O /etc/openvpn/client.ovpn
+wget https://cdn.jsdelivr.net/gh/HXHGTS/OpenVPN-Server-Create/client.conf -O /etc/openvpn/client.ovpn
 
 chown root.openvpn /etc/openvpn/* -R
 
