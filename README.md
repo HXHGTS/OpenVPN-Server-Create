@@ -119,9 +119,7 @@ echo "net.ipv4.icmp_echo_ignore_all=1">>/etc/sysctl.conf && sysctl -p
 ```
 wget https://cdn.jsdelivr.net/gh/HXHGTS/OpenVPN-Server-Create/softetherlogpurge.sh
 
-crontab -e
-
-*/180 * * * * bash softetherlogpurge.sh
+echo "*/180 * * * * bash softetherlogpurge.sh >> /tmp/tmp.txt" >> /var/spool/cron/root
 
 crontab -l
 ```
