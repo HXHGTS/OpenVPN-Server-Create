@@ -148,6 +148,8 @@ iptables -F
 
 iptables -Z
 
-iptables -t nat -A POSTROUTING -o eth0 -j FULLCONENAT; iptables -t nat -A PREROUTING -i eth0 -j FULLCONENAT
+iptables -t nat -A POSTROUTING -o eth0 -j FULLCONENAT
+
+iptables -t nat -A PREROUTING -i eth0 -j FULLCONENAT
 
 exit 0
